@@ -1,5 +1,3 @@
-#исто, не е вклучено во лабораториската вежба
-
 from django.shortcuts import render
 from .models import Post
 from .forms import PostForm
@@ -12,5 +10,3 @@ def posts(request):
     queryset = Post.objects.filter(author=request.user).all()
     context = {"posts": queryset, "form":PostForm}
     return render(request, "post.html", context=context)
-
-
